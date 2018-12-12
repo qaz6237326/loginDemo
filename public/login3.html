@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>请登录</h1>
+<form id="loginForm">
+    <p>
+        用户名：<input type="text" name="userName">
+    </p>
+    <p>
+        密码：<input type="password" name="password">
+    </p>
+    <p>
+        <button type="button" onclick="login()">登录</button>
+    </p>
+</form>
+
+<script>
+
+    var $ajax = new $Ajax();
+
+    function login() {
+
+        var inputs = $('loginForm').getElementsByTagName('input');
+        console.log(inputs)
+        var formObj = {};
+        for (let i = 0; i < inputs.length; i++) {
+            // console.log(inputs[i].name, inputs[i].value)
+            formObj[inputs[i].name] = inputs[i].value
+        }
+
+        console.log(formObj.userName)
+
+        $ajax.post('/loginApi', formObj)
+            .then(function(res){
+                console.log('登录结果: ', res);
+            })
+    }
+
+
+    function $(id) {
+        return document.getElementById(id)
+    }
+
+    function $Ajax() {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        this.get = function (api, formObj) {
+            return res('get',api, formObj)
+        };
+        this.post = function (api, formObj) {
+            return res('post',api, formObj)
+        };
+
+        function res(method, api, formObj) {
+            return new Promise(function (resolve, rejected) {
+                xmlhttp.open(method, api, true);
+                xmlhttp.send(formObj);
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        resolve(JSON.parse(xmlhttp.response))
+                    }
+                };
+            })
+        }
+    }
+
+</script>
+</body>
+</html>

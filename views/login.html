@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/lib/vue.js"></script>
+    <script src="/lib/axios.min.js"></script>
+</head>
+<body>
+
+<form action="http://127.0.0.1:8888/loginApi" method="post">
+    First Name: <input type="text" name="first_name">
+    <br>
+    LastName:<input type="text" name="last_name">
+    <input type="submit" value="Submit">
+</form>
+
+<div id="main">
+    <p>
+        用户名：<input type="text" v-model="obj.name">
+    </p>
+    <p>
+        密码：<input type="password" v-model="obj.password">
+    </p>
+    <p>
+        <button type="button" @click="login()">登录</button>
+    </p>
+</div>
+
+<script>
+
+    var vm = new Vue({
+        el: '#main',
+        data: {
+            obj: {
+                name: '',
+                password: ''
+            }
+        },
+        methods: {
+            login () {
+                console.log(this.obj)
+                axios.post('/loginApi', this.obj)
+                    .then((res) => {
+                        if (res.data.result) {
+                            window.location = '/index';
+                        } else {
+                        }
+                        console.log(res.data.message)
+                    })
+            }
+        }
+    })
+
+    console.log(vm)
+
+</script>
+
+</body>
+</html>
