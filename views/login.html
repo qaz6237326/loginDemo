@@ -25,6 +25,19 @@
     <p>
         <button type="button" @click="login()">登录</button>
     </p>
+    <ul>
+        <li v-for="item in userInfo">
+            <p>ID:{{item.id}}</p>
+            <p>姓名：{{item.name}}</p>
+            <p>年龄：{{item.age}}</p>
+        </li>
+    </ul>
+
+    <p>
+        <button @click="getToken()">获取token</button>
+        <button @click="verToken()">验证token</button>
+    </p>
+
 </div>
 
 <script>
@@ -35,18 +48,44 @@
             obj: {
                 name: '',
                 password: ''
-            }
+            },
+            userInfo: {}
         },
         methods: {
             login () {
+                let _this = this
                 console.log(this.obj)
                 axios.post('/loginApi', this.obj)
                     .then((res) => {
                         if (res.data.result) {
-                            window.location = '/index';
+                            _this.userInfo = res.data.data;
+                            axios.defaults.headers.common['Authorization'] = res.data.token
                         } else {
                         }
-                        console.log(res.data.message)
+                        console.log(res.data)
+                    })
+            },
+            getToken () {
+                let _this = this;
+                axios.post('/current', this.obj)
+                    .then((res) => {
+                        console.log(res)
+                        if (res.data.result) {
+                            _this.userInfo = res.data.data;
+                            axios.defaults.headers.common['Authorization'] = res.data.token
+                        } else {
+                        }
+                    })
+            },
+            verToken () {
+                let _this = this;
+                axios.get('/ver')
+                    .then((res) => {
+                        console.log(res)
+                        if (res.data.result) {
+
+                        } else {
+                        }
                     })
             }
         }

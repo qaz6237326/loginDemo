@@ -2,7 +2,7 @@ var path = require('path');
 
 function router(app) {
     app.get('/', function(req, res) {
-        res.end('Hello World!');
+        res.end('Hello World! haha');
     });
     app.get('/login', function(req, res) {
         res.sendFile(rootPath('login.html'));

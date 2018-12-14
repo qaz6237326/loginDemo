@@ -1,6 +1,8 @@
 var bodyParser = require('body-parser');
 var urlencodeParser = bodyParser.urlencoded({extended: false});
 var db = require('../db/index');
+const jwt = require('jsonwebtoken');
+var passport = require('passport');
 
 var databaseName = 'wldb';
 
@@ -31,7 +33,8 @@ function Request(app) {
                         if (data) {
                             json = {
                                 result: true,
-                                message: '登录成功'
+                                message: '登录成功',
+                                data: data
                             };
                         } else {
                             json = {
@@ -43,6 +46,53 @@ function Request(app) {
                     });
             }
         });
+    });
+    app.post('/current', (req, res) => {
+        res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
+        // 定义规则
+        let rule = {};
+        var body;
+        req.on('data', function(data) {
+            body = JSON.parse(data.toString());
+            // 规则头使用name作为内容
+            rule.name = JSON.parse(data.toString()).name;
+        });
+
+        req.on('end', function() {
+            let json = {};
+            if (!body.name || !body.password) {
+                json = {
+                    result: false,
+                    message: '请填写完整的信息'
+                };
+                res.end(JSON.stringify(json));
+            } else {
+                loginDB(body.name, body.password)
+                    .then(data => {
+                        if (data) {
+                            jwt.sign(rule, 'secret', {expiresIn: 20}, (err, token) => {
+                                if (err) return console.log(err);
+                                json = {
+                                    result: true,
+                                    message: '获取token成功',
+                                    data: data,
+                                    token: 'Bearer ' + token // 需要固定一个头部的名字 'Bearer '
+                                };
+                                res.end(JSON.stringify(json));
+                            });
+                        }
+                    })
+            }
+        })
+    });
+    app.get('/ver', passport.authenticate('jwt', { session: false }), function(req, res) {
+        res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
+        console.log('校验成功')
+        var json = {
+            result: true,
+            message: '校验token成功'
+        };
+        res.end(JSON.stringify(json));
     })
 }
 
@@ -54,7 +104,7 @@ function loginDB(name, password) {
             if (err) return console.log(err);
 
             // 查询表里的用户名和密码是否匹配，如果匹配返回用户数据，不匹配返回false
-            db.query(`SELECT * FROM user WHERE name='${name}' and password='${password}'`, function(err, result) {
+            db.query(`SELECT id,name,age FROM user WHERE name='${name}' and password='${password}'`, function(err, result) {
                 if (err) return console.log(err);
                 if (result.length) {
                     resolve(result);
@@ -62,7 +112,7 @@ function loginDB(name, password) {
                     resolve(false);
                 }
 
-                console.log('查询到的数据---------------------------------');
+                console.log(name + '用户的数据---------------------------------');
                 console.log(result);
                 console.log('查询到的数据---------------------------------');
             })
