@@ -1,7 +1,7 @@
 var mysql = require('mysql');
-var cfg = require('../../config/config.json');
+var config = require('../../config/config.json');
 
-var connection = mysql.createConnection(cfg.config.db);
+var connection = mysql.createConnection(config.cfg.db);
 // var connection = mysql.createConnection({
 //     host: 'localhost',
 //     user: 'root',

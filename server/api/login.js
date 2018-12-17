@@ -1,14 +1,18 @@
-var bodyParser = require('body-parser');
-var urlencodeParser = bodyParser.urlencoded({extended: false});
-var db = require('../db/index');
+const bodyParser = require('body-parser');
+const urlencodeParser = bodyParser.urlencoded({extended: false});
+const db = require('../db/index');
 const jwt = require('jsonwebtoken');
-var passport = require('passport');
+const passport = require('passport');
 
-var databaseName = 'wldb';
+const config = require('../../config/config.json');
+const secretOrKey = config.cfg.secretOrKey;
+const utf8 = config.httpHeader.utf8;
+
+const databaseName = 'wldb';
 
 function Request(app) {
     app.post('/loginApi', urlencodeParser, function(req, res) {
-        res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
+        res.writeHead(200, utf8);//设置response编码为utf-8
         // 接收到formData表单的数据,form表单的数据在request.body里
         // console.log(req.body);
 
@@ -48,7 +52,7 @@ function Request(app) {
         });
     });
     app.post('/current', (req, res) => {
-        res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
+        res.writeHead(200, utf8);//设置response编码为utf-8
         // 定义规则
         let rule = {};
         var body;
@@ -70,7 +74,7 @@ function Request(app) {
                 loginDB(body.name, body.password)
                     .then(data => {
                         if (data) {
-                            jwt.sign(rule, 'secret', {expiresIn: 20}, (err, token) => {
+                            jwt.sign(rule, secretOrKey, {expiresIn: 20}, (err, token) => {
                                 if (err) return console.log(err);
                                 json = {
                                     result: true,
@@ -86,7 +90,7 @@ function Request(app) {
         })
     });
     app.get('/ver', passport.authenticate('jwt', { session: false }), function(req, res) {
-        res.writeHead(200,{'Content-Type':'text/html;charset=utf-8'});//设置response编码为utf-8
+        res.writeHead(200, utf8);//设置response编码为utf-8
         console.log('校验成功')
         var json = {
             result: true,

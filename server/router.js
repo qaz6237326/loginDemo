@@ -2,14 +2,11 @@ var path = require('path');
 
 function router(app) {
     app.get('/', function(req, res) {
-        res.end('Hello World! haha');
+        res.sendFile(rootPath('index.html'));
     });
     app.get('/login', function(req, res) {
         res.sendFile(rootPath('login.html'));
     });
-    app.get('/index', function(req, res) {
-        res.sendFile(rootPath('index.html'));
-    })
 }
 
 /**

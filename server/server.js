@@ -6,6 +6,7 @@ const passport = require('passport');
 // passport 初始化
 app.use(passport.initialize());
 
+// 把passport传入config/passport模块中
 require("../config/passport")(passport);
 
 var router = require('./router');

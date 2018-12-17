@@ -8,35 +8,34 @@
 </head>
 <body>
 
-<form action="http://127.0.0.1:8888/loginApi" method="post">
-    First Name: <input type="text" name="first_name">
-    <br>
-    LastName:<input type="text" name="last_name">
-    <input type="submit" value="Submit">
-</form>
-
 <div id="main">
-    <p>
-        用户名：<input type="text" v-model="obj.name">
-    </p>
-    <p>
-        密码：<input type="password" v-model="obj.password">
-    </p>
-    <p>
-        <button type="button" @click="login()">登录</button>
-    </p>
-    <ul>
-        <li v-for="item in userInfo">
-            <p>ID:{{item.id}}</p>
-            <p>姓名：{{item.name}}</p>
-            <p>年龄：{{item.age}}</p>
-        </li>
-    </ul>
+    <div style="width: 500px;height:auto;padding: 20px;margin: 10% auto;border: 1px solid #ccc;">
+        <p v-if="message">
+            <span :style="resultFlag ? 'color: green;' : 'color: red;'">{{message}}</span>
+        </p>
+        <p>
+            用户名：<input type="text" v-model="obj.name">
+        </p>
+        <p>
+            密码：<input type="password" v-model="obj.password">
+        </p>
+        <p>
+            <button type="button" @click="login()">登录</button>
+        </p>
+        <ul>
+            <li v-for="item in userInfo">
+                <p>ID:{{item.id}}</p>
+                <p>姓名：{{item.name}}</p>
+                <p>年龄：{{item.age}}</p>
+            </li>
+        </ul>
 
-    <p>
-        <button @click="getToken()">获取token</button>
-        <button @click="verToken()">验证token</button>
-    </p>
+        <p>
+            <button @click="getToken()">获取token</button>
+            <button @click="verToken()">验证token</button>
+        </p>
+    </div>
+
 
 </div>
 
@@ -45,11 +44,13 @@
     var vm = new Vue({
         el: '#main',
         data: {
+            message: '',
             obj: {
                 name: '',
                 password: ''
             },
-            userInfo: {}
+            userInfo: {},
+            resultFlag: false
         },
         methods: {
             login () {
@@ -57,10 +58,13 @@
                 console.log(this.obj)
                 axios.post('/loginApi', this.obj)
                     .then((res) => {
+                        _this.resultFlag = res.data.result;
+                        _this.message = res.data.message;
                         if (res.data.result) {
                             _this.userInfo = res.data.data;
                             axios.defaults.headers.common['Authorization'] = res.data.token
                         } else {
+
                         }
                         console.log(res.data)
                     })

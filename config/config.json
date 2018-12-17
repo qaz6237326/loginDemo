@@ -1,9 +1,13 @@
 {
-  "config": {
+  "cfg": {
     "db": {
       "host": "localhost",
       "user": "root",
       "password": "123456"
-    }
+    },
+    "secretOrKey": "secret"
+  },
+  "httpHeader": {
+    "utf8": {"Content-Type":"text/html;charset=utf-8"}
   }
 }
