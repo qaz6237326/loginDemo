@@ -13,16 +13,11 @@ function Request(app) {
         // 接收到formData表单的数据,form表单的数据在request.body里
         // console.log(req.body);
         // res.writeHead(200, utf8);//设置response编码为utf-8
-
-        // 定义规则
-        let rule = {};
         let body;
 
         // 用于接收json数据，data为Buffer类型，需要toString()转换，然后用JSON.parse()转换成JSON数据
         req.on('data', function(data) {
             body = JSON.parse(data.toString());
-            // 规则头使用name作为内容
-            rule.name = JSON.parse(data.toString()).name;
         });
 
         req.on('end', function() {
@@ -34,16 +29,11 @@ function Request(app) {
                 };
                 res.end(JSON.stringify(json));
             } else {
-                // 连接数据库
-                db.connect(function(err, result){
-                    if (err) return console.log(err);
-                    console.log('数据库连接成功')
-
-                    loginResult(req, res, body, rule)
-                });
+                loginResult(req, res, body)
             }
         })
     });
+
     app.get('/ver', passport.authenticate('jwt', { session: false }), function(req, res) {
         res.writeHead(200, utf8);//设置response编码为utf-8
         console.log('校验成功');
@@ -55,10 +45,14 @@ function Request(app) {
     })
 }
 
-function loginResult(req, res, body, rule) {
+function loginResult(req, res, body) {
     let json;
     let _db;
     let _createJwt;
+    // 定义规则，规则头使用name作为内容
+    let rule = {
+        name: body.name
+    };
     _db = loginDB.loginDB(body.name, body.password);
     _db.then(data => {
         if (data) {
@@ -86,6 +80,4 @@ function loginResult(req, res, body, rule) {
 }
 
 
-module.exports ={
-    Request: Request
-};
+module.exports = Request;

@@ -7,24 +7,24 @@ const db = require('./index');
 
 module.exports = {
     loginDB: function (name, password) {
-        const databaseNameSql = 'use wldb';
+        const databaseName = 'wldb';
         const queryUser = `SELECT id,name,age FROM user WHERE name= ? and password= ?`;
 
         // 使用Promise处理异步
         return new Promise(function (resolve, reject) {
             // 选择需要查询的数据库
-            db.query(databaseNameSql, function (err, result) {
+            db.query('use ' + databaseName, function (err, result) {
                 if (err) return console.log(err);
 
                 // 查询表里的用户名和密码是否匹配，如果匹配返回用户数据，不匹配返回false
                 db.query(queryUser, [name, password], function (err, result) {
+                    console.log(name + '用户的数据---------------------------------');
                     if (err) return console.log(err);
                     if (result.length) {
                         resolve(result);
                     } else {
                         resolve(false);
                     }
-                    console.log(name + '用户的数据---------------------------------');
                     console.log(result);
                     console.log('查询到的数据---------------------------------');
                 })
