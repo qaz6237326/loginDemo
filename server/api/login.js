@@ -1,15 +1,11 @@
 const bodyParser = require('body-parser');
 const urlencodeParser = bodyParser.urlencoded({extended: false});
-const db = require('../db/index');
-const jwt = require('jsonwebtoken');
 const passport = require('passport');
 
+const db = require('../db/login');
+const comFun = require('../../utils/commonFun');
 const config = require('../../config/config.json');
-const secretOrKey = config.cfg.secretOrKey;
 const utf8 = config.httpHeader.utf8;
-
-const databaseNameSql = 'use wldb';
-const queryUser = `SELECT id,name,age FROM user WHERE name= ? and password= ?`;
 
 function Request(app) {
     app.post('/loginApi', (req, res) => {
@@ -38,12 +34,15 @@ function Request(app) {
                 res.end(JSON.stringify(json));
             } else {
                 // 查询数据库是否有相关用户信息
-                loginDB(body.name, body.password)
-                    .then(data => {
+                let _db;
+                let _createJwt;
+
+                _db = db.loginDB(body.name, body.password);
+                _db.then(data => {
                         if (data) {
                             // 创建token
-                            createJwt(rule, 20)
-                                .then(function (token) {
+                            _createJwt = comFun.createJwt(rule, 20);
+                            _createJwt.then((token) => {
                                     if (token) {
                                         json = {
                                             result: true,
@@ -74,53 +73,6 @@ function Request(app) {
         };
         res.end(JSON.stringify(json));
     })
-}
-
-/**
- * 创建一个token
- * @param rule 是任意对象，用来制定规则
- * @param time token过期的时间
- * */
-function createJwt(rule,time) {
-    return new Promise(function(resolve, reject) {
-        jwt.sign(rule, secretOrKey, {expiresIn: time}, (err, token) => {
-            if (err) {
-                console.log(err);
-                return resolve(false);
-            }
-            resolve(token);
-        });
-    })
-
-}
-
-/**
- * 登录查询数据库
- * @param name 用户名
- * @param password 密码
- * */
-function loginDB(name, password) {
-    // 使用Promise处理异步
-    return new Promise(function(resolve, reject) {
-        // 选择需要查询的数据库
-        db.query(databaseNameSql, function(err, result) {
-            if (err) return console.log(err);
-
-            // 查询表里的用户名和密码是否匹配，如果匹配返回用户数据，不匹配返回false
-            db.query(queryUser, [name, password], function(err, result) {
-                if (err) return console.log(err);
-                if (result.length) {
-                    resolve(result);
-                } else {
-                    resolve(false);
-                }
-
-                console.log(name + '用户的数据---------------------------------');
-                console.log(result);
-                console.log('查询到的数据---------------------------------');
-            })
-        })
-    });
 }
 
 
