@@ -4,10 +4,12 @@ const db = require('./index');
  * @param name 用户名
  * @param password 密码
  * */
+
 module.exports = {
     loginDB: function (name, password) {
         const databaseNameSql = 'use wldb';
         const queryUser = `SELECT id,name,age FROM user WHERE name= ? and password= ?`;
+
         // 使用Promise处理异步
         return new Promise(function (resolve, reject) {
             // 选择需要查询的数据库
