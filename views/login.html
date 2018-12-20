@@ -56,12 +56,12 @@
             </thead>
             <tbody>
             <tr v-for="item in userList">
-                <td>{{item.id}}</td>
+                <td class="text-center">{{item.id}}</td>
                 <td>{{item.name}}</td>
-                <td>{{item.age}}</td>
-                <td>{{item.createTime}}</td>
-                <td>{{item.updateTime}}</td>
-                <td>
+                <td class="text-center">{{item.age}}</td>
+                <td class="text-center">{{item.createTime}}</td>
+                <td class="text-center">{{item.updateTime}}</td>
+                <td class="text-center">
                     <button @click="openUpdateModal(item)">修改</button>
                     <button @click="deleteUser(item)">删除</button>
                 </td>
