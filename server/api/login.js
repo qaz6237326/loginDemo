@@ -25,7 +25,7 @@ function Request(app) {
                     result: false,
                     message: '请填写完整的信息'
                 };
-                res.end(JSON.stringify(json));
+                res.json(json);
             } else {
                 loginResult(req, res, body)
             }
@@ -33,13 +33,12 @@ function Request(app) {
     });
 
     app.get('/ver', passport.authenticate('jwt', { session: false }), function(req, res) {
-        res.writeHead(200, utf8);//设置response编码为utf-8
         console.log('校验成功');
         var json = {
             result: true,
             message: '校验token成功'
         };
-        res.end(JSON.stringify(json));
+        res.json(json);
     })
 }
 

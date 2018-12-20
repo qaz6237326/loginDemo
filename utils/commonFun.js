@@ -20,6 +20,10 @@ module.exports = {
             });
         })
     },
+    /**
+     * 使用把字符串转成JSON格式
+     * @param data 前端返回的body数据
+     * */
     parserData(data) {
         return JSON.parse(data.toString());
     }

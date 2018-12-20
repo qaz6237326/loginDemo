@@ -16,23 +16,7 @@ const deleteSql = 'delete from user where id=?';
 
 module.exports = {
     queryAllUserDB() {
-        return new Promise((resolve, reject) => {
-            db.query('use ' + databaseName, function (err, result) {
-                if (err) return console.log(err);
-                db.query(querySql, function (err, result) {
-                    console.log('查询所有用户信息===========================================')
-                    if (err) {
-                        return console.log('err')
-                    }
-                    if (result.length) {
-                        resolve(result);
-                    } else {
-                        resolve(false);
-                    }
-                    console.log('查询所有用户信息===========================================')
-                })
-            })
-        })
+        return useAndHandler(querySql, [], '查询所有用户信息');
     },
     updateDB(body) {
         let _sql;
@@ -44,77 +28,39 @@ module.exports = {
             _sql = updateSql1 + updateSql3;
             _data= [body.name, body.age, body.id];
         }
-        return new Promise((resolve, reject) => {
-                db.query('use ' + databaseName, function (err, result) {
-                    if (err) {
-                        resolve(false);
-                        return console.log(err);
-                    } else {
-                        db.query(_sql, _data, function(err, result) {
-                            if(err) {
-                                resolve(false);
-                                console.log('修改用户失败。。。。');
-                                return console.log(err)
-                            }
-                            console.log(result)
-                            if (result.affectedRows) {
-                                resolve(result);
-                            } else {
-                                resolve(false);
-                            }
-                            console.log('修改用户信息===========================================')
-                        })
-                    }
-                });
-        })
+        return useAndHandler(_sql, _data, '修改用户信息');
     },
     addUserDB(body) {
         let _data =  [body.name, body.password, body.age]
-        return new Promise((resolve, reject) => {
-            db.query('use ' + databaseName, function (err, result) {
-                if (err) {
-                    resolve(false);
-                    return console.log(err);
-                } else {
-                    db.query(addSql, _data, function(err, result) {
-                        if(err) {
-                            resolve(false);
-                            return console.log(err)
-                        }
-                        if (result.affectedRows) {
-                            resolve(result);
-                        } else {
-                            resolve(false);
-                        }
-                        console.log('添加新用户===========================================')
-                    })
-                }
-            })
-        })
+        return useAndHandler(addSql, _data, '添加新用户');
     },
     deleteUserDB(body) {
         let _data =  [body.id];
-        return new Promise((resolve, reject) => {
-            db.query('use ' + databaseName, function (err, result) {
-                if (err) {
-                    resolve(false);
-                    return console.log(err);
-                } else {
-                    db.query(deleteSql, _data, function(err, result) {
-                        if(err) {
-                            resolve(false);
-                            return console.log(err)
-                        }
-                        console.log(result)
-                        if (result.affectedRows) {
-                            resolve(result);
-                        } else {
-                            resolve(false);
-                        }
-                        console.log('删除用户===========================================')
-                    })
-                }
-            })
-        })
+        return useAndHandler(deleteSql, _data, '删除用户');
     }
 };
+
+function useAndHandler(sql, data, msg) {
+    return new Promise((resolve, reject) => {
+        db.query('use ' + databaseName, function (err, result) {
+            if (err) {
+                resolve(false);
+                return console.log(err);
+            } else {
+                db.query(sql, data, function(err, result) {
+                    if(err) {
+                        resolve(false);
+                        return console.log(err)
+                    }
+                    console.log(result)
+                    if (result.length > 0 || result.affectedRows) {
+                        resolve(result);
+                    } else {
+                        resolve(false);
+                    }
+                    console.log(`${msg}===========================================`)
+                })
+            }
+        })
+    })
+}
