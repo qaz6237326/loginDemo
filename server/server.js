@@ -2,9 +2,13 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const passport = require('passport');
+const cookieParser = require('cookie-parser');
 
 const router = require('./router');
 const db = require('./db/index');
+
+app.use(express.urlencoded({extended: false}));
+app.use(cookieParser());
 
 // passport 初始化
 app.use(passport.initialize());

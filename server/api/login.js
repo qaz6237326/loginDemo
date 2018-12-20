@@ -1,5 +1,3 @@
-const bodyParser = require('body-parser');
-const urlencodeParser = bodyParser.urlencoded({extended: false});
 const passport = require('passport');
 
 const db = require('../db/index');
@@ -17,7 +15,7 @@ function Request(app) {
 
         // 用于接收json数据，data为Buffer类型，需要toString()转换，然后用JSON.parse()转换成JSON数据
         req.on('data', function(data) {
-            body = JSON.parse(data.toString());
+            body = comFun.parserData(data);
         });
 
         req.on('end', function() {

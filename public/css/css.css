@@ -1,0 +1,11 @@
+.updateModalStyle {
+    width: 500px;
+    padding:30px;
+    border: 2px solid #ccc;
+    box-shadow:1px 1px 1px #888;
+    position:fixed;
+    top:10vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}

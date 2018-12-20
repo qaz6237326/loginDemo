@@ -19,5 +19,8 @@ module.exports = {
                 resolve(token);
             });
         })
+    },
+    parserData(data) {
+        return JSON.parse(data.toString());
     }
 };

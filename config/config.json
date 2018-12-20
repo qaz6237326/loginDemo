@@ -3,7 +3,8 @@
     "db": {
       "host": "localhost",
       "user": "root",
-      "password": "123456"
+      "password": "123456",
+      "dateStrings": true
     },
     "secretOrKey": "secret"
   },
