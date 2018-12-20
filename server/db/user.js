@@ -3,8 +3,8 @@ const db = require('./index');
  * 用户数据库操作
  * @param name 用户名
  * @param password 密码
- * @id id
- * @age 年龄
+ * @param id 用户唯一标识
+ * @param age 年龄
  * */
 const databaseName = 'wldb';
 const querySql = 'select * from v_user';
