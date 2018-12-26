@@ -3,11 +3,17 @@ const app = express();
 const path = require('path');
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
 const router = require('./router');
 const db = require('./db/index');
 
-app.use(express.urlencoded({extended: false}));
+// 解析请求体，并把解析结果放在request.body这个对象里，方便post请求时获取数据
+app.use(bodyParser.json());
+
+app.use(bodyParser.urlencoded({extended: false})); // true和false 都一样
+
+// 解析cookie
 app.use(cookieParser());
 
 // passport 初始化
@@ -39,7 +45,7 @@ function start() {
     router(app);
 
     // 监听端口
-    let server = app.listen(8888, 'localhost', function() {
+    let server = app.listen(8888, 'localhost', function(err) {
         let host = server.address().address;
         let port = server.address().port;
         console.log('服务已启动，地址为：http://%s:%s', host, port);

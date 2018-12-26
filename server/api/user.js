@@ -6,7 +6,7 @@ module.exports = function UserApi(app) {
     let body;
     let json;
     /**
-     * 更新用户信息
+     * 查询所有用户
      * */
     app.get('/queryAllUser', (req, res) => {
         userDB.queryAllUserDB()
