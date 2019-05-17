@@ -31,7 +31,7 @@ module.exports = {
         return useAndHandler(_sql, _data, '修改用户信息');
     },
     addUserDB(body) {
-        let _data =  [body.name, body.password, body.age]
+        let _data =  [body.name, body.password, body.age];
         return useAndHandler(addSql, _data, '添加新用户');
     },
     deleteUserDB(body) {
@@ -52,7 +52,7 @@ function useAndHandler(sql, data, msg) {
                         resolve(false);
                         return console.log(err)
                     }
-                    console.log(result)
+                    console.log(result);
                     if (result.length > 0 || result.affectedRows) {
                         resolve(result);
                     } else {

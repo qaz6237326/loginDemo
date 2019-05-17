@@ -122,7 +122,7 @@
             login () {
                 let _this = this
                 console.log(this.obj)
-                axios.post('/loginApi', this.obj)
+                axios.post('/testBody', this.obj)
                     .then((res) => {
                         _this.resultFlag = res.data.result;
                         _this.message = res.data.message;
