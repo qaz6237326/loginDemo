@@ -18,6 +18,7 @@ require("../config/passport")(passport);
 
 // 设置静态页面路径
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../public/web')));
 
 // 对所有的请求进行拦截的方法
 app.use(function(req, res, next) {
