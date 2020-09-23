@@ -1,0 +1,297 @@
+/* 公共 */
+.rejudge .fl {
+  float: left;
+}
+.rejudge .fr {
+  float: right;
+}
+.rejudge .yrow:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.rejudge-upload {
+  position: relative;
+}
+.rejudge-upload input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.rejudge .title {
+  padding-right: 15px;
+}
+/* btn */
+.rejudge .btnBox button {
+  margin-right: 20px;
+}
+.rejudge .btnBox button:last-child {
+  margin-right: 0;
+}
+.rejudge button.tint {
+  background: none;
+  border: 1px solid #ccc;
+  color: #232326;
+}
+.rejudge button.tint:hover {
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  color: #232326;
+}
+
+/*修改框架css*/
+.rejudge .tc-15-table-panel .tc-15-table-box td,
+.rejudge .tc-15-table-panel .tc-15-table-box th {
+  padding-left: 20px;
+}
+.rejudge .tc-15-page {
+  padding: 10px 20px;
+}
+.rejudge .tc-15-page-state {
+  margin-top: 0;
+}
+
+/* 新建组件 */
+.v_bigImgBox {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
+.v_bigImgBox .main {
+  background: #fff;
+  max-height: 84%;
+  max-width: 90%;
+  margin: auto;
+  overflow: scroll;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.v_bigImgBox .hint {
+  color: #666;
+  font-size: 32px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2%;
+}
+.v_bigImgBox .bg {
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+.v_bigImgBox .bg:hover {
+  background: rgba(0, 0, 0, 0.73);
+}
+
+/* rejudge */
+.rejudge {
+  color: #555;
+  font-size: 14px;
+  line-height: 30px;
+}
+.rejudge .queryCondition,
+.rejudge .glassList,
+.rejudge .imageInfo {
+  border: 1px solid #ddd;
+  box-shadow: none;
+}
+
+/* queryCondition */
+.rejudge .queryCondition .condition li {
+  float: left;
+  padding-right: 2%;
+  height: 30px;
+}
+.rejudge .queryCondition .condition li:last-child {
+  padding-right: 0;
+}
+.rejudge .queryCondition .condition li select {
+  width: 100%;
+}
+.rejudge .queryCondition .condition li.fr {
+  float: right;
+}
+.rejudge .queryCondition .condition2 li button.update {
+  background: none;
+  border: none;
+  color: #0084ff;
+  font-size: 14px;
+  padding: 0 10px;
+}
+.rejudge .queryCondition .condition2 li button.update:hover {
+  color: rgb(0, 159, 255);
+}
+.rejudge .queryCondition .condition2 li label {
+  font-size: 14px;
+  line-height: 30px;
+}
+.rejudge .queryCondition .condition:first-child {
+  padding-bottom: 20px;
+}
+.rejudge .queryCondition .condition:first-child li {
+  width: 23.5%;
+}
+
+.condition-select-container {
+  padding-left: 3em;
+  position: relative;
+}
+
+.condition-select-container .title {
+  position: absolute;
+  left: 0;
+}
+
+/* glassList */
+.rejudge .glassList .isRejudge {
+  color: rgb(9, 202, 111);
+}
+
+/* imageInfo */
+.rejudge .imageInfo > * {
+  margin-bottom: 20px;
+}
+.rejudge .imageInfo > *:last-child {
+  margin-bottom: 0;
+}
+.rejudge .imageInfo .rejudgeData_image {
+  background: #ddd;
+  margin-right: 2%;
+  width: 66%;
+  min-height: 500px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.rejudge .imageInfo .rejudgeData_image .img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.rejudge .imageInfo .rejudgeData_image .img:hover {
+  opacity: 0.95;
+}
+.rejudgeData_image:hover .rejudge-next {
+  right: 0;
+}
+.rejudgeData_image:hover .rejudge-prev {
+  left: 0;
+}
+.rejudgeData_image .rejudge-next {
+  right: -60px;
+}
+.rejudgeData_image .rejudge-prev {
+  left: -60px;
+}
+.rejudgeData_image .rejudge-prev,
+.rejudgeData_image .rejudge-next {
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  height: 100%;
+  width: 60px;
+  transition: all 0.5s;
+  cursor: pointer;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.3);
+  width: 60px;
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+}
+.rejudge .imageInfo .rejudgeData_codes {
+  width: 32%;
+}
+.rejudge .imageInfo .rejudgeData_codes > * {
+  padding: 8px;
+}
+.rejudge .imageInfo .rejudgeData_codes .codeList {
+  overflow: hidden;
+}
+.rejudge .imageInfo .rejudgeData_codes .codeList label {
+  float: left;
+  width: 25%;
+  line-height: 24px;
+}
+.rejudge .imageInfo .rejudgeData_codes .codeList label {
+  margin-right: 0;
+}
+.rejudge .imageInfo .rejudgeData_codes .otherCode {
+  height: 30px;
+}
+
+.rejudge .imageInfo .siteInfo {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0;
+}
+.rejudge .imageInfo .siteInfo li {
+  float: left;
+  width: 25%;
+}
+.rejudge .imageInfo .siteInfo li .title {
+  color: #999;
+}
+
+.image-list-info {
+  font-size: 14px;
+}
+
+.rejudge .imageInfo .RTResult > div {
+  float: left;
+  width: 50%;
+  /* min-width: 50%; */
+  min-height: 1px;
+}
+.rejudge .imageInfo .RTResult > div:last-child label {
+  padding-left: 8px;
+}
+
+.bigImgBox {
+  overflow: scroll;
+  height: 89%;
+  width: 96%;
+  position: absolute;
+}
+
+.bigImgBoxContainer {
+  width: 90%;
+  height: 87%;
+  padding: 2%;
+  position: relative;
+}
+/* export */
+.export-progress {
+  height: 10px;
+  background: #006eff;
+}
+
+.export-progress.error {
+  background: #e54545;
+}
+
+.export-progress:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #e5e5e5;
+}
+
+.export-percentage {
+  margin-top: 10px;
+}

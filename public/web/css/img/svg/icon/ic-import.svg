@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_import</title>
+    <desc>Created with Sketch.</desc>
+    <g id="复判工具" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="21控件" transform="translate(-108.000000, -1920.000000)">
+            <g id="按钮" transform="translate(80.000000, 1834.000000)">
+                <g id="button">
+                    <g id="导入-copy" transform="translate(0.000000, 72.000000)">
+                        <g id="ic_import" transform="translate(28.000000, 14.000000)">
+                            <g>
+                                <g>
+                                    <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+                                    <polygon id="Shape" fill="#3D62CD" fill-rule="nonzero" points="4 16 8 16 8 18 2 18 2 2 18 2 18 8 16 8 16 4 4 4"></polygon>
+                                    <polygon id="Path-4" fill="#3D62CD" fill-rule="nonzero" points="18 12 18 14 11 14 11 12"></polygon>
+                                    <polygon id="Path-5" fill="#3D62CD" fill-rule="nonzero" points="14.7071068 15.7928932 13.2928932 17.2071068 9.08578644 13 13.2928932 8.79289322 14.7071068 10.2071068 11.9142136 13"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

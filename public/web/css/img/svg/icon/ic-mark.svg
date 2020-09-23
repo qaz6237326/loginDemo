@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_mark</title>
+    <desc>Created with Sketch.</desc>
+    <g id="复判工具" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="19查看复判结果_入口" transform="translate(-992.000000, -976.000000)">
+            <g id="操作栏" transform="translate(0.000000, 262.000000)">
+                <g id="按钮区" transform="translate(928.000000, 640.000000)">
+                    <g id="标记工具" transform="translate(0.000000, 60.000000)">
+                        <g id="ic_mark" transform="translate(64.000000, 14.000000)">
+                            <g>
+                                <g>
+                                    <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+                                    <rect id="Rectangle" fill="#3D62CD" x="5" y="3" width="10" height="2"></rect>
+                                    <rect id="Rectangle" fill="#3D62CD" x="15" y="5" width="2" height="10"></rect>
+                                    <rect id="Rectangle-Copy-2" fill="#3D62CD" x="3" y="5" width="2" height="10"></rect>
+                                    <rect id="Rectangle-Copy" fill="#3D62CD" x="5" y="15" width="10" height="2"></rect>
+                                    <path d="M4,17 C4.55228475,17 5,16.5522847 5,16 C5,15.4477153 4.55228475,15 4,15 C3.44771525,15 3,15.4477153 3,16 C3,16.5522847 3.44771525,17 4,17 Z M4,19 C2.34314575,19 1,17.6568542 1,16 C1,14.3431458 2.34314575,13 4,13 C5.65685425,13 7,14.3431458 7,16 C7,17.6568542 5.65685425,19 4,19 Z" id="Oval-Copy-2" fill="#3D62CD" fill-rule="nonzero"></path>
+                                    <path d="M16,5 C16.5522847,5 17,4.55228475 17,4 C17,3.44771525 16.5522847,3 16,3 C15.4477153,3 15,3.44771525 15,4 C15,4.55228475 15.4477153,5 16,5 Z M16,7 C14.3431458,7 13,5.65685425 13,4 C13,2.34314575 14.3431458,1 16,1 C17.6568542,1 19,2.34314575 19,4 C19,5.65685425 17.6568542,7 16,7 Z" id="Oval-Copy" fill="#3D62CD" fill-rule="nonzero"></path>
+                                    <path d="M4,5 C4.55228475,5 5,4.55228475 5,4 C5,3.44771525 4.55228475,3 4,3 C3.44771525,3 3,3.44771525 3,4 C3,4.55228475 3.44771525,5 4,5 Z M4,7 C2.34314575,7 1,5.65685425 1,4 C1,2.34314575 2.34314575,1 4,1 C5.65685425,1 7,2.34314575 7,4 C7,5.65685425 5.65685425,7 4,7 Z" id="Oval-Copy-4" fill="#3D62CD" fill-rule="nonzero"></path>
+                                    <path d="M16,17 C16.5522847,17 17,16.5522847 17,16 C17,15.4477153 16.5522847,15 16,15 C15.4477153,15 15,15.4477153 15,16 C15,16.5522847 15.4477153,17 16,17 Z M16,19 C14.3431458,19 13,17.6568542 13,16 C13,14.3431458 14.3431458,13 16,13 C17.6568542,13 19,14.3431458 19,16 C19,17.6568542 17.6568542,19 16,19 Z" id="Oval-Copy-3" fill="#3D62CD" fill-rule="nonzero"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

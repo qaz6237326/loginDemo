@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_infomation</title>
+    <desc>Created with Sketch.</desc>
+    <g id="复判工具" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="21控件" transform="translate(-1095.000000, -896.000000)">
+            <g id="说明" transform="translate(660.000000, 810.000000)">
+                <g id="上传复判文件-copy" transform="translate(0.000000, 72.000000)">
+                    <g id="ic_infomation" transform="translate(435.000000, 14.000000)">
+                        <g>
+                            <g>
+                                <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+                                <path d="M10,17 C13.8659932,17 17,13.8659932 17,10 C17,6.13400675 13.8659932,3 10,3 C6.13400675,3 3,6.13400675 3,10 C3,13.8659932 6.13400675,17 10,17 Z M10,19 C5.02943725,19 1,14.9705627 1,10 C1,5.02943725 5.02943725,1 10,1 C14.9705627,1 19,5.02943725 19,10 C19,14.9705627 14.9705627,19 10,19 Z" id="Oval" fill="#3D62CD" fill-rule="nonzero"></path>
+                                <rect id="Rectangle" fill="#3D62CD" x="9" y="5" width="2" height="2"></rect>
+                                <rect id="Rectangle-Copy" fill="#3D62CD" x="9" y="9" width="2" height="6"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

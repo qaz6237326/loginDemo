@@ -1,0 +1,159 @@
+#imageError {
+  padding-top: 20px;
+  font-size: 2em;
+}
+
+.top-title-box {
+  padding:0px 20px ;
+  line-height: 60px;
+  margin:0 0 10px 0;
+  background-color: #fff ;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+  .title-text {
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+.card {
+  background: rgba(250,250,250,1);
+  padding:10px 15px;
+  box-shadow: 1px 1px 1px rgba(240,240,245,1);
+  max-width: 90%;
+  min-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  .card-title {
+
+  }
+}
+
+.uploadFileName {
+  min-width: 265px;
+  max-width: 365px;
+  background: #d8d8d8;
+  line-height: 30px;
+  position: relative;
+  top: 17px;
+  padding: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.importCodeBox {
+  position: absolute;
+  top: 6px;
+  right: 0;
+}
+
+.label-button-default {
+  display: inline-block;
+  padding: 7px 20px;
+  text-align: center;
+  border: 1px solid rgba(201,205,210,1);
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  bottom: 5px;
+  .icon-text {
+    font-size: 18px;
+  }
+}
+.imageInfo-btn {
+  font-size: 1.3em;
+  line-height: 40px;
+  height: 40px;
+}
+
+.wl-search-box {
+  ul .active {
+    background: rgba(240,240,240,1) !important;
+  }
+}
+
+.detail-fullScroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 111;
+  .tc-panel {
+    height:100%;
+    overflow: auto;
+  }
+}
+
+.detail-loading{
+  display: none;
+  position: absolute;
+  width: 100%;
+  // min-height: 600px;
+  height: 100%;
+  background: rgba(160,160,160,.6);
+  z-index: 99999;
+  top: 0;
+  bottom: 0;
+  // padding: 10% 0px;
+  .n-loading-icon {
+    width: 33px;
+    height: 33px;
+  }
+  .text {
+    font-size: 3em;
+  }
+}
+
+.modal-footerBtn {
+  button {
+    margin: 0 15px;
+  }
+}
+.title-tip {
+  width: 140px;
+  height: 48px;
+  background: #3A4254;
+  border-radius: 2px;
+  position: absolute;
+  right: -42px;
+  top: -100%;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  display: none;
+  &:before {
+    content: "";
+    width: 12px;
+    height: 8px;
+    position: absolute;
+    bottom: -8px;
+    left: 48%;
+    background-image: url(/img/arrow_popping.svg)
+  }
+}
+.upload-icon-a {
+  &:hover {
+    .title-tip {
+      display: block;
+    }
+  }
+}
+.adc-title {
+  font-family: SFProText-Regular;
+  font-size: 18px;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 28px;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  .value {
+    font-family: SFProText-Medium;
+    font-size: 18px;
+    color: #3D62CD;
+    text-align: center;
+    line-height: 28px;
+  }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_finish_disable</title>
+    <desc>Created with Sketch.</desc>
+    <g id="复判工具" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="03样本验证_按产品复判_图片加载2" transform="translate(-1475.000000, -976.000000)">
+            <g id="操作栏" transform="translate(0.000000, 262.000000)">
+                <g id="按钮区" transform="translate(928.000000, 640.000000)">
+                    <g id="结束复判" transform="translate(483.000000, 60.000000)">
+                        <g id="ic_finish_disable" transform="translate(64.000000, 14.000000)">
+                            <g>
+                                <g>
+                                    <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+                                    <path d="M14.1289866,2.00092276 C17.0223722,3.49746872 19,6.5177845 19,10 C19,14.9705627 14.9705627,19 10,19 C5.02943725,19 1,14.9705627 1,10 C1,6.52303109 2.971673,3.50657109 5.8579414,2.0076976 L6.77968535,3.78263086 C4.4756147,4.97916214 3,7.35772858 3,10 C3,13.8659932 6.13400675,17 10,17 C13.8659932,17 17,13.8659932 17,10 C17,7.35363803 15.5197741,4.9719698 13.2101566,3.77736626 L14.1289866,2.00092276 Z M14.1289866,2.00092276 C17.0223722,3.49746872 19,6.5177845 19,10 C19,14.9705627 14.9705627,19 10,19 C5.02943725,19 1,14.9705627 1,10 C1,6.52303109 2.971673,3.50657109 5.8579414,2.0076976 L6.77968535,3.78263086 C4.4756147,4.97916214 3,7.35772858 3,10 C3,13.8659932 6.13400675,17 10,17 C13.8659932,17 17,13.8659932 17,10 C17,7.35363803 15.5197741,4.9719698 13.2101566,3.77736626 L14.1289866,2.00092276 Z" id="Path" fill="#CFD1D5" fill-rule="nonzero"></path>
+                                    <polygon id="Path-13" fill="#CFD1D5" fill-rule="nonzero" points="9 1 11 1 11 10 9 10"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

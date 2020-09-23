@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_upload</title>
+    <desc>Created with Sketch.</desc>
+    <g id="复判工具" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="21控件" transform="translate(-676.000000, -1024.000000)">
+            <g id="说明" transform="translate(660.000000, 810.000000)">
+                <g id="Group-4" transform="translate(0.000000, 140.000000)">
+                    <g id="上传复判文件-copy-2" transform="translate(0.000000, 60.000000)">
+                        <g id="ic_upload" transform="translate(16.000000, 14.000000)">
+                            <g>
+                                <g>
+                                    <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+                                    <polygon id="Path-7" fill="#333333" fill-rule="nonzero" points="16 16 16 12 18 12 18 18 2 18 2 12 4 12 4 16"></polygon>
+                                    <polygon id="Path-8" fill="#333333" fill-rule="nonzero" points="11 14 9 14 9 2.5 11 2.5"></polygon>
+                                    <polygon id="Path-9" fill="#333333" fill-rule="nonzero" points="10 3.91421356 4.70710678 9.20710678 3.29289322 7.79289322 10 1.08578644 16.7071068 7.79289322 15.2928932 9.20710678"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

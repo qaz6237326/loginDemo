@@ -46,7 +46,7 @@ function start() {
     router(app);
 
     // 监听端口
-    let server = app.listen(8888, 'localhost', function(err) {
+    let server = app.listen(8989, 'localhost', function(err) {
         let host = server.address().address;
         let port = server.address().port;
         console.log('服务已启动，地址为：http://%s:%s', host, port);
